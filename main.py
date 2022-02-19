@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from requests import get
+from datetime import datetime
 
 app = Flask(__name__)
 
@@ -34,6 +34,14 @@ def normal_addition():
         the_sum = num1 + num2
 
     return render_template("normal_calc.html", sum=the_sum)
+
+
+@app.route("/isitchristmas")
+def checker():
+    time = str(datetime.date(datetime.now()))
+    christmas = f"{str(datetime.year)}-12-25"
+    value = "Jo" if (time == christmas) else "ne"
+    return render_template("checker.html", data=value)
 
 
 if __name__ == "__main__":
