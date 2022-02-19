@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block normal_calc %}
+<form class="row g-3" method="post">
+  <div class="col-auto">
+    <label for="staticEmail2">Number1</label>
+    <input type="number" id="staticEmail2" placeholder="99" name="number1">
+  </div>
+  <div class="col-auto">
+    <label for="staticEmail3">Number3</label>
+    <input type="number" id="staticEmail3" placeholder="1" name="number2">
+  </div>
+  <div class="col-auto">
+    <button type="submit" class="btn btn-primary mb-3">Add those two together</button>
+  </div>
+</form>
+
+<p>{{sum}}</p>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block users %}
+
+{% if type %}
+  <h4>Table of {{type}} users</h4>
+{% else%}
+  <h4>Table of generic users</h4>
+{%endif%}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Moto</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for person in people %}
+    <tr>
+      <th scope="row">{{person.id}}</th>
+      <td>{{person.name}}</td>
+      <td>{{person.moto}}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
