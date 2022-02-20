@@ -12,6 +12,7 @@
       <th scope="col">#</th>
       <th scope="col">First</th>
       <th scope="col">Moto</th>
+      <th scope="col">Image</th>
     </tr>
   </thead>
   <tbody>
@@ -20,6 +21,7 @@
       <th scope="row">{{person.id}}</th>
       <td>{{person.name}}</td>
       <td>{{person.moto}}</td>
+      <td><img src="{{person.image_url}}" alt="Girl in a jacket" height="100px" /></td>
     </tr>
   {% endfor %}
   </tbody>

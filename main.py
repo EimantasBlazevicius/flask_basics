@@ -1,5 +1,6 @@
-from flask import Flask, render_template, request
 from datetime import datetime
+
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -17,9 +18,12 @@ def addition(num1, num2):
 
 @app.route("/users")
 def users():
-    people = [{"id": 1, "name": "Mark", "moto": "Mark my words"},
-              {"id": 2, "name": "Jonas", "moto": "Jonines yra gerai"},
-              {"id": 3, "name": "Ugnius", "moto": "Viskas vistiek sudegs"}
+    people = [{"id": 1, "name": "Mark", "moto": "Mark my words",
+               "image_url": "https://fonts.gstatic.com/s/i/productlogos/meet_2020q4/v1/web-96dp/logo_meet_2020q4_color_2x_web_96dp.png"},
+              {"id": 2, "name": "Jonas", "moto": "Jonines yra gerai",
+               "image_url": "https://fonts.gstatic.com/s/i/productlogos/meet_2020q4/v1/web-96dp/logo_meet_2020q4_color_2x_web_96dp.png"},
+              {"id": 3, "name": "Ugnius", "moto": "Viskas vistiek sudegs",
+               "image_url": "https://fonts.gstatic.com/s/i/productlogos/meet_2020q4/v1/web-96dp/logo_meet_2020q4_color_2x_web_96dp.png", }
               ]
     type = ""
     return render_template("users.html", people=people, type=type)
